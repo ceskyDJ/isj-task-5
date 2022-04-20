@@ -1,7 +1,8 @@
-import doctest
+from typing import List, Tuple, Iterable, Optional
 
 
-def gen_quiz(qpool, *question_indexes, altcodes="ABCDEF", quiz=None):
+def gen_quiz(qpool: List[Tuple[str, List[str]]], *question_indexes: int, altcodes: Iterable = "ABCDEF",
+             quiz: Optional[List[Tuple[str, List[str]]]] = None) -> List[Tuple[str, List[str]]]:
     """
     Generates quiz from prepared questions and answers
 
@@ -66,4 +67,5 @@ def gen_quiz(qpool, *question_indexes, altcodes="ABCDEF", quiz=None):
 
 
 if __name__ == "__main__":
+    import doctest
     doctest.testmod()
